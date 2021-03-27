@@ -1,0 +1,18 @@
+<div class="update">
+  <p class="update-title">Update Todos</p>
+
+  <form class="update-form" [formGroup]="form" (ngSubmit)="submitUpdate()">
+
+    <div class="form-block">
+      <label for="title">Title</label>
+      <input formControlName="title" [(ngModel)]="todo.title" id="title" type="text" class="form-input">
+    </div>
+
+    <div class="form-block">
+      <label for="completed">Completed</label>
+      <mat-slide-toggle formControlName="completed" [(ngModel)]="todo.completed" id="completed"></mat-slide-toggle>
+    </div>
+
+    <button class="form-button" type="submit">Update</button>
+  </form>
+</div>
