@@ -82,3 +82,21 @@ button:active,
 button:focus {
   outline: none;
 }
+
+.test {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 30px;
+  padding: 0 20px;
+}
+
+::ng-deep table.mat-table.cdk-table.table {
+  width: 100%;
+}
+
+::ng-deep .mat-elevation-z8 {
+  margin: 30px;
+}
