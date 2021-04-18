@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModalCreateComponent } from './pages/modal-create/modal-create.component';
-import { ModalEditComponent } from './pages/modal-edit/modal-edit.component';
-import { TodosComponent } from './pages/todos/todos.component';
+import { EdituserComponent } from './pages/edituser/edituser.component';
+import { ManageAccountComponent } from './pages/manage-account/manage-account.component';
 
 const routes: Routes = [
   {
     path: 'todos',
-    component: TodosComponent,
+    // component: TodosComponent,
+    component: ManageAccountComponent
   },
-  { path: 'todos/create', component: ModalCreateComponent },
-  { path: 'todo/:id/edit', component: ModalEditComponent },
+  {
+    path: 'user-detail/:id',
+    component: EdituserComponent
+  },
   {
     path: '**',
     redirectTo: '/todos',

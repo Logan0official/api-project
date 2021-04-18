@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="updateForm()">
+
+  <div>
+    <input formControlName="userName" [(ngModel)]="users && users.userName" type="text">
+  </div>
+
+  <div>
+    <input formControlName="firstName" [(ngModel)]="users && users.firstName" type="text">
+  </div>
+
+  <div>
+    <input formControlName="lastName" [(ngModel)]="users && users.lastName" type="text">
+  </div>
+
+  <div>
+    <input formControlName="status" [(ngModel)]="users && users.status" type="text">
+  </div>
+
+  <button type="submit">Update</button>
+</form>

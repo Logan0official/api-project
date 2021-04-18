@@ -1,0 +1,169 @@
+<div class="manage-account">
+	<mat-card class="profile-user">
+		<!-- <img class="profile-img" src="assets/images/image 19.png"> -->
+		<div class="username" >
+			<p class="userdata">{{ users && users[el].firstName }} {{ users && users[el].lastName }} {{ users && users[el].status }}</p>
+			<button class="edit-profile" mat-button (click)="onEdit( users && users[el].id )">Edit Profile</button>
+		</div>
+		<div class="userlocation">
+			<p class="userdata">
+        <!-- <img class="icons" src="assets/icons/Vector — копия.svg">  -->
+        Sydney, Australia</p>
+			<p class="userdata">
+        <!-- <img class="icons" src="assets/icons/Vector (1).svg"> -->
+        9898989898</p>
+			<p class="userdata">
+        <!-- <img class="icons" src="assets/icons/Vector (2).svg"> -->
+        alexcary@gmail.com</p>
+		</div>
+		<div class="money-spent">
+			<div class="card">
+				<mat-card style="background-color: #EA5A92;;
+												 border-radius: 13px;
+												 width: 40px;
+												 height: 40px;
+												 margin: auto 20px;
+												 box-shadow: 0 3px 8px 0 #EA5A92;
+												 padding: 0;">
+          <!-- <img style="padding: 11px;" src="assets/images/payment 1.svg"> -->
+        </mat-card>
+        <div class="spended">
+					<p class="desc">Spent Money</p>
+					<h2 class="money">$1500</h2>
+				</div>
+			</div>
+		</div>
+		<div class="money-spent">
+			<div class="card">
+				<mat-card style="background-color: #17C4A5;
+												 border-radius: 13px;
+												 width: 40px;
+												 margin: auto 20px;
+												 height: 40px;
+												 box-shadow: 0 3px 8px 0 #17C4A5;
+												 padding: 0;">
+          <!-- <img style="padding: 11px;" src="assets/images/payment 1.svg"> -->
+        </mat-card>
+				<div class="spended">
+					<p class="desc">Spent Money</p>
+					<h2 class="money">$1500</h2>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+
+	<div class="widget" style="padding-left: 3%; padding-right: 3%;">
+	  <div class="fuse-card" style="width: 100% !important; max-width: none !important;">
+      <h2 class="claims">Claims History</h2>
+      <div class="ml-sm-32" fxLayout="row" fxLayoutAlign="end center" fxFlex style="margin-right: 30px !important;">
+        <div class="search-wrapper">
+          <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+            <input placeholder="Search..." (keyup)="filterTable($event.target.value)" (focus)="setupFilter('firstName')">
+            <mat-icon style="color: #00AFD5;">search</mat-icon>
+          </div>
+        </div>
+      </div>
+	  </div>
+	</div>
+
+	<!-- <div class="header-table">
+		<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" style="border-radius: 10px;">
+	    <ng-container matColumnDef="userName">
+	        <mat-header-cell *matHeaderCellDef>User Name</mat-header-cell>
+	    </ng-container>
+	    <ng-container matColumnDef="firstName">
+	        <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+	    </ng-container>
+	    <ng-container matColumnDef="lastName">
+	        <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+	    </ng-container>
+	    <ng-container matColumnDef="status">
+	        <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+	    </ng-container>
+	    <ng-container matColumnDef="actions">
+	        <mat-header-cell class="align-right" *matHeaderCellDef>
+	        	Action
+	        </mat-header-cell>
+	    </ng-container>
+	    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	    <mat-row *matRowDef="let row; columns: displayedColumns;"
+	             [ngClass]="{'make-gold': row.position == 'Car  Claims'}">
+	    </mat-row>
+		</mat-table>
+	</div> -->
+
+	<!-- <div class="table">
+		<div *ngFor="let user of users">
+			<mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="border-radius: 10px;">
+		    <ng-container matColumnDef="userName">
+		        <mat-header-cell *matHeaderCellDef><p class="table-data">{{user.userName}}</p></mat-header-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="firstName">
+		        <mat-header-cell *matHeaderCellDef> <p class="table-data">{{user.firstName}}</p></mat-header-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="lastName">
+		        <mat-header-cell *matHeaderCellDef><p class="table-data">{{user.lastName}}</p></mat-header-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="status">
+		        <mat-header-cell *matHeaderCellDef><p class="table-data">{{user.status}}</p></mat-header-cell>
+		    </ng-container>
+		    <ng-container matColumnDef="actions">
+		        <mat-header-cell class="align-right" *matHeaderCellDef>
+		        	<button class="view" mat-button >View</button>
+		        </mat-header-cell>
+		    </ng-container>
+		    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		    <mat-row *matRowDef="let row; columns: displayedColumns;"
+		             [ngClass]="{'make-gold': row.position == 'Car  Claims'}">
+		    </mat-row>
+			</mat-table>
+
+		</div>
+		<mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[30]" showFirstLastButtons></mat-paginator>
+	</div> -->
+
+	<div class="table">
+	  <table class="table" mat-table [dataSource]="dataSource">
+
+	  	<ng-container matColumnDef="id">
+	      <th mat-header-cell *matHeaderCellDef> ID </th>
+	      <td mat-cell *matCellDef="let element"><p class="table-data">{{element.id}}</p></td>
+	    </ng-container>
+
+	    <ng-container matColumnDef="userName">
+	      <th mat-header-cell *matHeaderCellDef> User Name </th>
+	      <td mat-cell *matCellDef="let element"><p class="table-data">{{element.userName}}</p></td>
+	    </ng-container>
+
+	    <ng-container matColumnDef="firstName">
+	      <th mat-header-cell *matHeaderCellDef> First Name </th>
+	      <td mat-cell *matCellDef="let element"><p class="table-data"> {{element.firstName}} </p></td>
+	    </ng-container>
+
+	    <ng-container matColumnDef="lastName">
+	      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+	      <td mat-cell *matCellDef="let element"><p class="table-data"> {{element.lastName}} </p></td>
+	    </ng-container>
+
+	    <ng-container matColumnDef="status">
+	      <th mat-header-cell *matHeaderCellDef> Status </th>
+	      <td mat-cell *matCellDef="let element"><p class="table-data"> {{element.status}} </p></td>
+	    </ng-container>
+
+	    <ng-container matColumnDef="actions">
+	      <th mat-header-cell *matHeaderCellDef class="align-right-header"> Action </th>
+	      <td mat-cell *matCellDef="let element" class="align-right">
+	      	<div class="button">
+	        	<button class="view" mat-button (click)="elem(element.id)">View</button>
+	      	</div>
+	      </td>
+	    </ng-container>
+
+	    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+	  </table>
+
+	  <mat-paginator [pageSizeOptions]="[30]" showFirstLastButtons></mat-paginator>
+	</div>
+
+</div>
